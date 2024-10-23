@@ -82,6 +82,16 @@ void BoschParser::parseMetaEvent(const struct bhy2_fifo_parse_data_info *callbac
   struct parse_ref *parse_table = (struct parse_ref*)callback_ref;
   (void)parse_table;
 
+  if (meta_event_type == BHY2_META_EVENT_SENSOR_STATUS) {
+    if (byte1 == BHY2_SENSOR_ID_ACC) {
+      accuracy.AccAccuracy = byte2;
+    } else if (byte1 == BHY2_SENSOR_ID_GYRO) {
+      accuracy.GyroAccuracy = byte2;
+    } else if (byte1 == BHY2_SENSOR_ID_MAG) {
+      accuracy.MagAccuracy = byte2;
+    }
+  }
+
   if (_debug) {
 
     switch (meta_event_type)

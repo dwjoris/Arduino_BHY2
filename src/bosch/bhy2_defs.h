@@ -523,6 +523,13 @@ enum bhy2_intf {
     BHY2_I2C_INTERFACE
 };
 
+struct SensorAccuracy
+{
+  uint8_t GyroAccuracy;
+  uint8_t AccAccuracy;
+  uint8_t MagAccuracy;
+};
+
 /* HIF device structure */
 struct bhy2_hif_dev
 {
