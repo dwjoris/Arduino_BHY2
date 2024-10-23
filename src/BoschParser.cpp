@@ -3,6 +3,7 @@
 #include "sensors/SensorID.h"
 
 Stream* BoschParser::_debug = NULL;
+extern SensorAccuracy accuracy;
 
 void BoschParser::debug(Stream &stream)
 {

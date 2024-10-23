@@ -67,7 +67,6 @@ private:
   friend class Arduino_BHY2;
   static void debug(Stream &stream);
   static Stream *_debug;
-  extern SensorAccuracy accuracy;
 };
 
 #endif
