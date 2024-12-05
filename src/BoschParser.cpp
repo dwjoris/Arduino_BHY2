@@ -59,6 +59,8 @@ void BoschParser::parseData(const struct bhy2_fifo_parse_data_info *fifoData, vo
 
 void BoschParser::parseMetaEvent(const struct bhy2_fifo_parse_data_info *callback_info, void *callback_ref)
 {
+  
+  Serial.print("Acc: "); 
   uint8_t meta_event_type = callback_info->data_ptr[0];
   uint8_t byte1 = callback_info->data_ptr[1];
   uint8_t byte2 = callback_info->data_ptr[2];
@@ -86,7 +88,6 @@ void BoschParser::parseMetaEvent(const struct bhy2_fifo_parse_data_info *callbac
   if (meta_event_type == BHY2_META_EVENT_SENSOR_STATUS) {
     if (byte1 == BHY2_SENSOR_ID_ACC) {
       accuracy.AccAccuracy = byte2;
-      Serial.print("Acc: "); Serial.println(byte2);
     } else if (byte1 == BHY2_SENSOR_ID_GYRO) {
       accuracy.GyroAccuracy = byte2;
     } else if (byte1 == BHY2_SENSOR_ID_MAG) {
