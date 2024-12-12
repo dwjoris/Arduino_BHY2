@@ -143,6 +143,11 @@ int8_t BoschSensortec::get_calibration_profile(uint8_t sensor_id, uint8_t *calib
   return bhy2_get_calibration_profile(sensor_id, calib_prof, prof_len, actual_len, &_bhy2);
 }
 
+int8_t BoschSensortec::set_calibration_profile(uint8_t sensor_id, uint8_t *calib_prof, uint16_t prof_len) {
+  return bhy2_set_calibration_profile(sensor_id, calib_prof, prof_len, &_bhy2);
+}
+
+
 
 void BoschSensortec::bhy2_bsec2_setConfigString(const uint8_t * buffer, uint32_t length) {
     const uint8_t BSEC2_CMD_ENA_WR[] = {0x01,0x00,0x00,0x00};

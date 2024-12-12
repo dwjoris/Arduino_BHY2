@@ -96,6 +96,9 @@ public:
                                     uint8_t *calib_prof,
                                     uint16_t prof_len,
                                     uint32_t *actual_len);
+  int8_t set_calibration_profile(uint8_t sensor_id,
+                                    uint8_t *calib_prof,
+                                    uint16_t prof_len);
   void bhy2_bsec2_setConfigString(const uint8_t * buffer, uint32_t length);
   void bhy2_bsec2_setHP(const uint8_t * hp_temp, uint8_t hp_temp_len, const uint8_t * hp_dur, uint8_t hp_dur_len);
   //this sets the temperature offset caused by board's self heat,
