@@ -139,8 +139,8 @@ int8_t BoschSensortec::bhy2_getParameter(uint16_t param, uint8_t *buffer, uint32
   return bhy2_get_parameter(param, buffer, length, actual_len, &_bhy2);
 }
 
-int8_t BoschSensortec::bhy2_get_calibration_profile(uint8_t sensor_id, uint8_t *calib_prof, uint16_t prof_len, uint32_t *actual_len) {
-  return bhy2_get_calibration_profile(sensor_id, calib_prof, prof_len, actual_len);
+int8_t BoschSensortec::get_calibration_profile(uint8_t sensor_id, uint8_t *calib_prof, uint16_t prof_len, uint32_t *actual_len) {
+  return bhy2_get_calibration_profile(sensor_id, calib_prof, prof_len, actual_len, &_bhy2);
 }
 
 

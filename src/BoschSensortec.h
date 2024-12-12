@@ -92,7 +92,7 @@ public:
   void printSensors();
   int8_t bhy2_setParameter(uint16_t param, const uint8_t *buffer, uint32_t length);
   int8_t bhy2_getParameter(uint16_t param, uint8_t *buffer, uint32_t length, uint32_t *actual_len);
-  int8_t bhy2_get_calibration_profile(uint8_t sensor_id,
+  int8_t get_calibration_profile(uint8_t sensor_id,
                                     uint8_t *calib_prof,
                                     uint16_t prof_len,
                                     uint32_t *actual_len);
